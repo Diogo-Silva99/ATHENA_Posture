@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+  <sdf version="1.4">
+    <world name="default">
+      <!-- A global light source -->
+      <include>
+        <uri>model://sun</uri>
+      </include>
+      <!-- A ground plane -->
+      <include>
+        <uri>model://ground_plane</uri>
+      </include>
+
+      <population name="step1">
+        <model name="step">
+          <include>
+            <uri>model://blocks</uri>
+          </include>
+        </model>
+        <pose> 0 0.4 0 0 0 0 </pose>
+        <distribution>
+          <type>grid</type>
+          <rows>3</rows>
+          <cols>2</cols>
+          <step>0.38 0.3 0</step>
+        </distribution>
+      </population>
+
+      <!--population name="step2">
+        <model name="step2">
+          <include>
+            <uri>model://ark22</uri>
+          </include>
+        </model>
+        <pose> 0 0.4 0 0 0 0 </pose>
+        <distribution>
+          <type>grid</type>
+          <rows>1</rows>
+          <cols>2</cols>
+          <step>0.28 0.3 0</step>
+        </distribution>
+      </population-->
+
+      <!--population name="wooden_blocks2">
+        <model name="wooden_block2">
+          <include>
+            <uri>model://wood_block</uri>
+          </include>
+        </model>
+        <pose> 0 1.8 0 0 0 0 </pose>
+        <distribution>
+          <type>grid</type>
+          <rows>2</rows>
+          <cols>2</cols>
+          <step>0.25 0.6 0</step>
+        </distribution>
+      </population-->
+
+    </world>
+  </sdf>
