@@ -1,0 +1,2252 @@
+<sdf version='1.7'>
+  <model name='hexapod'>
+    <link name='dummy_link'>
+      <inertial>
+        <pose>0 0 0.595308 0 -0 0</pose>
+        <mass>0.7</mass>
+        <inertia>
+          <ixx>0.002516</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001023</iyy>
+          <iyz>0</iyz>
+          <izz>0.003173</izz>
+        </inertia>
+      </inertial>
+      <collision name='dummy_link_fixed_joint_lump__torso_collision'>
+        <pose>0 0 0.594308 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.12 0.2 0.056</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='dummy_link_visual'>
+        <pose>0 0 6 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.01 0.01 0.01</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='dummy_link_fixed_joint_lump__torso_visual_1'>
+        <pose>0 0 0.594308 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.12 0.2 0.056</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/LightGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='tc_1' type='revolute'>
+      <pose relative_to='dummy_link'>0.06 0 0.594308 0 -0 0</pose>
+      <parent>dummy_link</parent>
+      <child>coxa_1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.610865</lower>
+          <upper>0.610865</upper>
+          <effort>1.89</effort>
+          <velocity>6.54498</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <provide_feedback>1</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='coxa_1'>
+      <pose relative_to='tc_1'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.031938 0 0 0 -0 0</pose>
+        <mass>0.081</mass>
+        <inertia>
+          <ixx>2.16e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>3.83401e-05</iyy>
+          <iyz>0</iyz>
+          <izz>3.83401e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='coxa_1_collision'>
+        <pose>0.031938 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.063875 0.04 0.04</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='coxa_1_visual'>
+        <pose>0.031938 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.063875 0.04 0.04</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='ctr_1' type='revolute'>
+      <pose relative_to='coxa_1'>0.063875 0 0 0 -0 0</pose>
+      <parent>coxa_1</parent>
+      <child>femur_1</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1.48353</lower>
+          <upper>1.48353</upper>
+          <effort>1.89</effort>
+          <velocity>6.54498</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <provide_feedback>1</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='femur_1'>
+      <pose relative_to='ctr_1'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.04 0 0 0 -0 0</pose>
+        <mass>0.136</mass>
+        <inertia>
+          <ixx>3.62667e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.06667e-05</iyy>
+          <iyz>0</iyz>
+          <izz>9.06667e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='femur_1_collision'>
+        <pose>0.04 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.08 0.04 0.04</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='femur_1_visual'>
+        <pose>0.04 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.08 0.04 0.04</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='fti_1' type='revolute'>
+      <pose relative_to='femur_1'>0.08 0 0 0 -0 0</pose>
+      <parent>femur_1</parent>
+      <child>tibia_1</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1.48353</lower>
+          <upper>1.48353</upper>
+          <effort>1.89</effort>
+          <velocity>6.54498</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <provide_feedback>1</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='tibia_1'>
+      <pose relative_to='fti_1'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 -0.057154 0 -0 0</pose>
+        <mass>0.01338</mass>
+        <inertia>
+          <ixx>1.63529e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.63529e-05</iyy>
+          <iyz>0</iyz>
+          <izz>3.568e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='tibia_1_collision'>
+        <pose>0 0 -0.057154 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.04 0.04 0.114308</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='tibia_1_visual'>
+        <pose>0 0 -0.057154 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.04 0.04 0.114308</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='foot_1_joint' type='revolute'>
+      <pose relative_to='tibia_1'>0 0 -0.134308 0 -0 0</pose>
+      <parent>tibia_1</parent>
+      <child>foot_1</child>
+      <axis>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='foot_1'>
+      <pose relative_to='foot_1_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.00892</mass>
+        <inertia>
+          <ixx>5.7088e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>5.7088e-06</iyy>
+          <iyz>0</iyz>
+          <izz>5.7088e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='foot_1_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.02</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>1</kd>
+              <max_vel>0</max_vel>
+              <min_depth>0.003</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <solver>
+                <friction_model>cone_model</friction_model>
+                <mu>1.0</mu>
+              </solver>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='foot_1_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.02</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <sensor name='contact_sensor_1' type='contact'>
+        <always_on>1</always_on>
+        <contact>
+          <collision>foot_1_collision</collision>
+          <topic>__default_topic__</topic>
+        </contact>
+        <plugin name='foot_1_plugin' filename='libgazebo_ros_bumper.so'>
+          <updateRate>50</updateRate>
+          <always_on>1</always_on>
+          <bumperTopicName>foot_1_bumper</bumperTopicName>
+          <frameName>world</frameName>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='tc_2' type='revolute'>
+      <pose relative_to='dummy_link'>0.06 0.1 0.594308 0 -0 0.785398</pose>
+      <parent>dummy_link</parent>
+      <child>coxa_2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.610865</lower>
+          <upper>0.610865</upper>
+          <effort>1.89</effort>
+          <velocity>6.54498</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <provide_feedback>1</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='coxa_2'>
+      <pose relative_to='tc_2'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.031938 0 0 0 -0 0</pose>
+        <mass>0.081</mass>
+        <inertia>
+          <ixx>2.16e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>3.83401e-05</iyy>
+          <iyz>0</iyz>
+          <izz>3.83401e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='coxa_2_collision'>
+        <pose>0.031938 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.063875 0.04 0.04</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='coxa_2_visual'>
+        <pose>0.031938 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.063875 0.04 0.04</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/LightGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='ctr_2' type='revolute'>
+      <pose relative_to='coxa_2'>0.063875 0 0 0 -0 0</pose>
+      <parent>coxa_2</parent>
+      <child>femur_2</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1.48353</lower>
+          <upper>1.48353</upper>
+          <effort>1.89</effort>
+          <velocity>6.54498</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <provide_feedback>1</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='femur_2'>
+      <pose relative_to='ctr_2'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.04 0 0 0 -0 0</pose>
+        <mass>0.136</mass>
+        <inertia>
+          <ixx>3.62667e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.06667e-05</iyy>
+          <iyz>0</iyz>
+          <izz>9.06667e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='femur_2_collision'>
+        <pose>0.04 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.08 0.04 0.04</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='femur_2_visual'>
+        <pose>0.04 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.08 0.04 0.04</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/LightGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='fti_2' type='revolute'>
+      <pose relative_to='femur_2'>0.08 0 0 0 -0 0</pose>
+      <parent>femur_2</parent>
+      <child>tibia_2</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1.48353</lower>
+          <upper>1.48353</upper>
+          <effort>1.89</effort>
+          <velocity>6.54498</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <provide_feedback>1</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='tibia_2'>
+      <pose relative_to='fti_2'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 -0.057154 0 -0 0</pose>
+        <mass>0.01338</mass>
+        <inertia>
+          <ixx>1.63529e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.63529e-05</iyy>
+          <iyz>0</iyz>
+          <izz>3.568e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='tibia_2_collision'>
+        <pose>0 0 -0.057154 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.04 0.04 0.114308</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='tibia_2_visual'>
+        <pose>0 0 -0.057154 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.04 0.04 0.114308</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/LightGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='foot_2_joint' type='revolute'>
+      <pose relative_to='tibia_2'>0 0 -0.134308 0 -0 0</pose>
+      <parent>tibia_2</parent>
+      <child>foot_2</child>
+      <axis>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='foot_2'>
+      <pose relative_to='foot_2_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.00892</mass>
+        <inertia>
+          <ixx>5.7088e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>5.7088e-06</iyy>
+          <iyz>0</iyz>
+          <izz>5.7088e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='foot_2_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.02</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>1</kd>
+              <max_vel>0</max_vel>
+              <min_depth>0.003</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <solver>
+                <friction_model>cone_model</friction_model>
+                <mu>1.0</mu>
+              </solver>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='foot_2_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.02</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/LightGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <sensor name='contact_sensor_2' type='contact'>
+        <always_on>1</always_on>
+        <contact>
+          <collision>foot_2_collision</collision>
+          <topic>__default_topic__</topic>
+        </contact>
+        <plugin name='foot_2_plugin' filename='libgazebo_ros_bumper.so'>
+          <updateRate>50</updateRate>
+          <always_on>1</always_on>
+          <bumperTopicName>foot_2_bumper</bumperTopicName>
+          <frameName>world</frameName>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='tc_3' type='revolute'>
+      <pose relative_to='dummy_link'>-0.06 0.1 0.594308 0 -0 2.35619</pose>
+      <parent>dummy_link</parent>
+      <child>coxa_3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.610865</lower>
+          <upper>0.610865</upper>
+          <effort>1.89</effort>
+          <velocity>6.54498</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <provide_feedback>1</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='coxa_3'>
+      <pose relative_to='tc_3'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.031938 0 0 0 -0 0</pose>
+        <mass>0.081</mass>
+        <inertia>
+          <ixx>2.16e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>3.83401e-05</iyy>
+          <iyz>0</iyz>
+          <izz>3.83401e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='coxa_3_collision'>
+        <pose>0.031938 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.063875 0.04 0.04</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='coxa_3_visual'>
+        <pose>0.031938 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.063875 0.04 0.04</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='ctr_3' type='revolute'>
+      <pose relative_to='coxa_3'>0.063875 0 0 0 -0 0</pose>
+      <parent>coxa_3</parent>
+      <child>femur_3</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1.48353</lower>
+          <upper>1.48353</upper>
+          <effort>1.89</effort>
+          <velocity>6.54498</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <provide_feedback>1</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='femur_3'>
+      <pose relative_to='ctr_3'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.04 0 0 0 -0 0</pose>
+        <mass>0.136</mass>
+        <inertia>
+          <ixx>3.62667e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.06667e-05</iyy>
+          <iyz>0</iyz>
+          <izz>9.06667e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='femur_3_collision'>
+        <pose>0.04 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.08 0.04 0.04</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='femur_3_visual'>
+        <pose>0.04 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.08 0.04 0.04</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='fti_3' type='revolute'>
+      <pose relative_to='femur_3'>0.08 0 0 0 -0 0</pose>
+      <parent>femur_3</parent>
+      <child>tibia_3</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1.48353</lower>
+          <upper>1.48353</upper>
+          <effort>1.89</effort>
+          <velocity>6.54498</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <provide_feedback>1</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='tibia_3'>
+      <pose relative_to='fti_3'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 -0.057154 0 -0 0</pose>
+        <mass>0.01338</mass>
+        <inertia>
+          <ixx>1.63529e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.63529e-05</iyy>
+          <iyz>0</iyz>
+          <izz>3.568e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='tibia_3_collision'>
+        <pose>0 0 -0.057154 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.04 0.04 0.114308</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='tibia_3_visual'>
+        <pose>0 0 -0.057154 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.04 0.04 0.114308</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='foot_3_joint' type='revolute'>
+      <pose relative_to='tibia_3'>0 0 -0.134308 0 -0 0</pose>
+      <parent>tibia_3</parent>
+      <child>foot_3</child>
+      <axis>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='foot_3'>
+      <pose relative_to='foot_3_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.00892</mass>
+        <inertia>
+          <ixx>5.7088e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>5.7088e-06</iyy>
+          <iyz>0</iyz>
+          <izz>5.7088e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='foot_3_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.02</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>1</kd>
+              <max_vel>0</max_vel>
+              <min_depth>0.003</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <solver>
+                <friction_model>cone_model</friction_model>
+                <mu>1.0</mu>
+              </solver>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='foot_3_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.02</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <sensor name='contact_sensor_3' type='contact'>
+        <always_on>1</always_on>
+        <contact>
+          <collision>foot_3_collision</collision>
+          <topic>__default_topic__</topic>
+        </contact>
+        <plugin name='foot_3_plugin' filename='libgazebo_ros_bumper.so'>
+          <updateRate>50</updateRate>
+          <always_on>1</always_on>
+          <bumperTopicName>foot_3_bumper</bumperTopicName>
+          <frameName>world</frameName>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='tc_4' type='revolute'>
+      <pose relative_to='dummy_link'>-0.06 0 0.594308 0 -0 3.14159</pose>
+      <parent>dummy_link</parent>
+      <child>coxa_4</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.610865</lower>
+          <upper>0.610865</upper>
+          <effort>1.89</effort>
+          <velocity>6.54498</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <provide_feedback>1</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='coxa_4'>
+      <pose relative_to='tc_4'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.031938 0 0 0 -0 0</pose>
+        <mass>0.081</mass>
+        <inertia>
+          <ixx>2.16e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>3.83401e-05</iyy>
+          <iyz>0</iyz>
+          <izz>3.83401e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='coxa_4_collision'>
+        <pose>0.031938 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.063875 0.04 0.04</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='coxa_4_visual'>
+        <pose>0.031938 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.063875 0.04 0.04</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/LightGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='ctr_4' type='revolute'>
+      <pose relative_to='coxa_4'>0.063875 0 0 0 -0 0</pose>
+      <parent>coxa_4</parent>
+      <child>femur_4</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1.48353</lower>
+          <upper>1.48353</upper>
+          <effort>1.89</effort>
+          <velocity>6.54498</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <provide_feedback>1</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='femur_4'>
+      <pose relative_to='ctr_4'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.04 0 0 0 -0 0</pose>
+        <mass>0.136</mass>
+        <inertia>
+          <ixx>3.62667e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.06667e-05</iyy>
+          <iyz>0</iyz>
+          <izz>9.06667e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='femur_4_collision'>
+        <pose>0.04 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.08 0.04 0.04</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='femur_4_visual'>
+        <pose>0.04 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.08 0.04 0.04</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/LightGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='fti_4' type='revolute'>
+      <pose relative_to='femur_4'>0.08 0 0 0 -0 0</pose>
+      <parent>femur_4</parent>
+      <child>tibia_4</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1.48353</lower>
+          <upper>1.48353</upper>
+          <effort>1.89</effort>
+          <velocity>6.54498</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <provide_feedback>1</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='tibia_4'>
+      <pose relative_to='fti_4'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 -0.057154 0 -0 0</pose>
+        <mass>0.01338</mass>
+        <inertia>
+          <ixx>1.63529e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.63529e-05</iyy>
+          <iyz>0</iyz>
+          <izz>3.568e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='tibia_4_collision'>
+        <pose>0 0 -0.057154 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.04 0.04 0.114308</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='tibia_4_visual'>
+        <pose>0 0 -0.057154 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.04 0.04 0.114308</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/LightGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='foot_4_joint' type='revolute'>
+      <pose relative_to='tibia_4'>0 0 -0.134308 0 -0 0</pose>
+      <parent>tibia_4</parent>
+      <child>foot_4</child>
+      <axis>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='foot_4'>
+      <pose relative_to='foot_4_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.00892</mass>
+        <inertia>
+          <ixx>5.7088e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>5.7088e-06</iyy>
+          <iyz>0</iyz>
+          <izz>5.7088e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='foot_4_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.02</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>1</kd>
+              <max_vel>0</max_vel>
+              <min_depth>0.003</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <solver>
+                <friction_model>cone_model</friction_model>
+                <mu>1.0</mu>
+              </solver>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='foot_4_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.02</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/LightGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <sensor name='contact_sensor_4' type='contact'>
+        <always_on>1</always_on>
+        <contact>
+          <collision>foot_4_collision</collision>
+          <topic>__default_topic__</topic>
+        </contact>
+        <plugin name='foot_4_plugin' filename='libgazebo_ros_bumper.so'>
+          <updateRate>50</updateRate>
+          <always_on>1</always_on>
+          <bumperTopicName>foot_4_bumper</bumperTopicName>
+          <frameName>world</frameName>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='tc_5' type='revolute'>
+      <pose relative_to='dummy_link'>-0.06 -0.1 0.594308 0 0 -2.35619</pose>
+      <parent>dummy_link</parent>
+      <child>coxa_5</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.610865</lower>
+          <upper>0.610865</upper>
+          <effort>1.89</effort>
+          <velocity>6.54498</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <provide_feedback>1</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='coxa_5'>
+      <pose relative_to='tc_5'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.031938 0 0 0 -0 0</pose>
+        <mass>0.081</mass>
+        <inertia>
+          <ixx>2.16e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>3.83401e-05</iyy>
+          <iyz>0</iyz>
+          <izz>3.83401e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='coxa_5_collision'>
+        <pose>0.031938 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.063875 0.04 0.04</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='coxa_5_visual'>
+        <pose>0.031938 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.063875 0.04 0.04</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='ctr_5' type='revolute'>
+      <pose relative_to='coxa_5'>0.063875 0 0 0 -0 0</pose>
+      <parent>coxa_5</parent>
+      <child>femur_5</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1.48353</lower>
+          <upper>1.48353</upper>
+          <effort>1.89</effort>
+          <velocity>6.54498</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <provide_feedback>1</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='femur_5'>
+      <pose relative_to='ctr_5'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.04 0 0 0 -0 0</pose>
+        <mass>0.136</mass>
+        <inertia>
+          <ixx>3.62667e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.06667e-05</iyy>
+          <iyz>0</iyz>
+          <izz>9.06667e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='femur_5_collision'>
+        <pose>0.04 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.08 0.04 0.04</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='femur_5_visual'>
+        <pose>0.04 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.08 0.04 0.04</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='fti_5' type='revolute'>
+      <pose relative_to='femur_5'>0.08 0 0 0 -0 0</pose>
+      <parent>femur_5</parent>
+      <child>tibia_5</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1.48353</lower>
+          <upper>1.48353</upper>
+          <effort>1.89</effort>
+          <velocity>6.54498</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <provide_feedback>1</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='tibia_5'>
+      <pose relative_to='fti_5'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 -0.057154 0 -0 0</pose>
+        <mass>0.01338</mass>
+        <inertia>
+          <ixx>1.63529e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.63529e-05</iyy>
+          <iyz>0</iyz>
+          <izz>3.568e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='tibia_5_collision'>
+        <pose>0 0 -0.057154 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.04 0.04 0.114308</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='tibia_5_visual'>
+        <pose>0 0 -0.057154 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.04 0.04 0.114308</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='foot_5_joint' type='revolute'>
+      <pose relative_to='tibia_5'>0 0 -0.134308 0 -0 0</pose>
+      <parent>tibia_5</parent>
+      <child>foot_5</child>
+      <axis>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='foot_5'>
+      <pose relative_to='foot_5_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.00892</mass>
+        <inertia>
+          <ixx>5.7088e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>5.7088e-06</iyy>
+          <iyz>0</iyz>
+          <izz>5.7088e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='foot_5_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.02</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>1</kd>
+              <max_vel>0</max_vel>
+              <min_depth>0.003</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <solver>
+                <friction_model>cone_model</friction_model>
+                <mu>1.0</mu>
+              </solver>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='foot_5_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.02</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <sensor name='contact_sensor_5' type='contact'>
+        <always_on>1</always_on>
+        <contact>
+          <collision>foot_5_collision</collision>
+          <topic>__default_topic__</topic>
+        </contact>
+        <plugin name='foot_5_plugin' filename='libgazebo_ros_bumper.so'>
+          <updateRate>50</updateRate>
+          <always_on>1</always_on>
+          <bumperTopicName>foot_5_bumper</bumperTopicName>
+          <frameName>world</frameName>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='tc_6' type='revolute'>
+      <pose relative_to='dummy_link'>0.06 -0.1 0.594308 0 0 -0.785398</pose>
+      <parent>dummy_link</parent>
+      <child>coxa_6</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.610865</lower>
+          <upper>0.610865</upper>
+          <effort>1.89</effort>
+          <velocity>6.54498</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <provide_feedback>1</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='coxa_6'>
+      <pose relative_to='tc_6'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.031938 0 0 0 -0 0</pose>
+        <mass>0.081</mass>
+        <inertia>
+          <ixx>2.16e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>3.83401e-05</iyy>
+          <iyz>0</iyz>
+          <izz>3.83401e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='coxa_6_collision'>
+        <pose>0.031938 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.063875 0.04 0.04</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='coxa_6_visual'>
+        <pose>0.031938 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.063875 0.04 0.04</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/LightGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='ctr_6' type='revolute'>
+      <pose relative_to='coxa_6'>0.063875 0 0 0 -0 0</pose>
+      <parent>coxa_6</parent>
+      <child>femur_6</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1.48353</lower>
+          <upper>1.48353</upper>
+          <effort>1.89</effort>
+          <velocity>6.54498</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <provide_feedback>1</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='femur_6'>
+      <pose relative_to='ctr_6'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.04 0 0 0 -0 0</pose>
+        <mass>0.136</mass>
+        <inertia>
+          <ixx>3.62667e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.06667e-05</iyy>
+          <iyz>0</iyz>
+          <izz>9.06667e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='femur_6_collision'>
+        <pose>0.04 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.08 0.04 0.04</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='femur_6_visual'>
+        <pose>0.04 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.08 0.04 0.04</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/LightGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='fti_6' type='revolute'>
+      <pose relative_to='femur_6'>0.08 0 0 0 -0 0</pose>
+      <parent>femur_6</parent>
+      <child>tibia_6</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1.48353</lower>
+          <upper>1.48353</upper>
+          <effort>1.89</effort>
+          <velocity>6.54498</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>1</provide_feedback>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <provide_feedback>1</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='tibia_6'>
+      <pose relative_to='fti_6'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 -0.057154 0 -0 0</pose>
+        <mass>0.01338</mass>
+        <inertia>
+          <ixx>1.63529e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.63529e-05</iyy>
+          <iyz>0</iyz>
+          <izz>3.568e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='tibia_6_collision'>
+        <pose>0 0 -0.057154 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.04 0.04 0.114308</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='tibia_6_visual'>
+        <pose>0 0 -0.057154 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.04 0.04 0.114308</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/LightGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='foot_6_joint' type='revolute'>
+      <pose relative_to='tibia_6'>0 0 -0.134308 0 -0 0</pose>
+      <parent>tibia_6</parent>
+      <child>foot_6</child>
+      <axis>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='foot_6'>
+      <pose relative_to='foot_6_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.00892</mass>
+        <inertia>
+          <ixx>5.7088e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>5.7088e-06</iyy>
+          <iyz>0</iyz>
+          <izz>5.7088e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='foot_6_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.02</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>1</kd>
+              <max_vel>0</max_vel>
+              <min_depth>0.003</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <solver>
+                <friction_model>cone_model</friction_model>
+                <mu>1.0</mu>
+              </solver>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='foot_6_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.02</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/LightGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <sensor name='contact_sensor_6' type='contact'>
+        <always_on>1</always_on>
+        <contact>
+          <collision>foot_6_collision</collision>
+          <topic>__default_topic__</topic>
+        </contact>
+        <plugin name='foot_6_plugin' filename='libgazebo_ros_bumper.so'>
+          <updateRate>50</updateRate>
+          <always_on>1</always_on>
+          <bumperTopicName>foot_6_bumper</bumperTopicName>
+          <frameName>world</frameName>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='torso_imu_joint' type='revolute'>
+      <pose relative_to='dummy_link'>0 0 0.595308 0 -0 0</pose>
+      <parent>dummy_link</parent>
+      <child>imu_link</child>
+      <axis>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='imu_link'>
+      <pose relative_to='torso_imu_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.024</mass>
+        <inertia>
+          <ixx>6.4e-08</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>6.4e-08</iyy>
+          <iyz>0</iyz>
+          <izz>6.4e-08</izz>
+        </inertia>
+      </inertial>
+      <collision name='imu_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.004 0.004 0.004</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='imu_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.004 0.004 0.004</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Orange</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <sensor name='imu_sensor' type='imu'>
+        <always_on>1</always_on>
+        <update_rate>50</update_rate>
+        <visualize>1</visualize>
+        <topic>__default_topic__</topic>
+        <plugin name='imu_plugin' filename='libgazebo_ros_imu_sensor.so'>
+          <robotNamespace>/hexapod</robotNamespace>
+          <topicName>imu</topicName>
+          <bodyName>imu_link</bodyName>
+          <updateRateHZ>50.0</updateRateHZ>
+          <gaussianNoise>0.0</gaussianNoise>
+          <xyzOffset>0 0 0</xyzOffset>
+          <rpyOffset>0 0 0</rpyOffset>
+          <frameName>imu_link</frameName>
+        </plugin>
+        <pose>0 0 0 0 -0 0</pose>
+      </sensor>
+    </link>
+    <joint name='torso_infrared_joint' type='revolute'>
+      <pose relative_to='dummy_link'>0 0 0.132 1.5708 1.5708 0</pose>
+      <parent>dummy_link</parent>
+      <child>infrared_link</child>
+      <axis>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='infrared_link'>
+      <pose relative_to='torso_infrared_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.024</mass>
+        <inertia>
+          <ixx>1.28e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.28e-07</iyy>
+          <iyz>0</iyz>
+          <izz>1.92e-07</izz>
+        </inertia>
+      </inertial>
+      <visual name='infrared_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.004</length>
+            <radius>0.004</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <sensor name='infrared_sensor' type='ray'>
+        <pose>0 0 0 0 -0 0</pose>
+        <visualize>1</visualize>
+        <update_rate>50</update_rate>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>10</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.14835</min_angle>
+              <max_angle>0.14835</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>10</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.14835</min_angle>
+              <max_angle>0.14835</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.001</min>
+            <max>2</max>
+            <resolution>0.002</resolution>
+          </range>
+        </ray>
+        <plugin name='gazebo_ros_range' filename='libgazebo_ros_range.so'>
+          <gaussianNoise>0.005</gaussianNoise>
+          <alwaysOn>1</alwaysOn>
+          <updateRate>50</updateRate>
+          <topicName>sensor/ir</topicName>
+          <frameName>infrared_link</frameName>
+          <visualize>1</visualize>
+          <radiation>infrared</radiation>
+          <fov>0.02</fov>
+        </plugin>
+      </sensor>
+    </link>
+
+    <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+      <robotNamespace>/hexapod</robotNamespace>
+    </plugin>
+    <plugin name='joint_state_publisher' filename='libgazebo_ros_joint_state_publisher.so'>
+      <robotNamespace>/hexapod</robotNamespace>
+      <jointName>tc_1, tc_2, tc_3, tc_4, tc_5, tc_6, ctr_1, ctr_2, ctr_3, ctr_4, ctr_5, ctr_6, fti_1, fti_2, fti_3, fti_4, fti_5, fti_6</jointName>
+      <updateRate>50.0</updateRate>
+      <alwaysOn>1</alwaysOn>
+    </plugin>
+    <plugin name='torque_sensor_tc_1' filename='libgazebo_ros_ft_sensor.so'>
+      <updateRate>50.0</updateRate>
+      <topicName>torque_tc_1</topicName>
+      <jointName>tc_1</jointName>
+    </plugin>
+    <plugin name='torque_sensor_ctr_1' filename='libgazebo_ros_ft_sensor.so'>
+      <updateRate>50.0</updateRate>
+      <topicName>torque_ctr_1</topicName>
+      <jointName>ctr_1</jointName>
+    </plugin>
+    <plugin name='torque_sensor_fti_1' filename='libgazebo_ros_ft_sensor.so'>
+      <updateRate>50.0</updateRate>
+      <topicName>torque_fti_1</topicName>
+      <jointName>fti_1</jointName>
+    </plugin>
+    <plugin name='torque_sensor_tc_2' filename='libgazebo_ros_ft_sensor.so'>
+      <updateRate>50.0</updateRate>
+      <topicName>torque_tc_2</topicName>
+      <jointName>tc_2</jointName>
+    </plugin>
+    <plugin name='torque_sensor_ctr_2' filename='libgazebo_ros_ft_sensor.so'>
+      <updateRate>50.0</updateRate>
+      <topicName>torque_ctr_2</topicName>
+      <jointName>ctr_2</jointName>
+    </plugin>
+    <plugin name='torque_sensor_fti_2' filename='libgazebo_ros_ft_sensor.so'>
+      <updateRate>25.0</updateRate>
+      <topicName>torque_fti_2</topicName>
+      <jointName>fti_2</jointName>
+    </plugin>
+    <plugin name='torque_sensor_tc_3' filename='libgazebo_ros_ft_sensor.so'>
+      <updateRate>50.0</updateRate>
+      <topicName>torque_tc_3</topicName>
+      <jointName>tc_3</jointName>
+    </plugin>
+    <plugin name='torque_sensor_ctr_3' filename='libgazebo_ros_ft_sensor.so'>
+      <updateRate>50.0</updateRate>
+      <topicName>torque_ctr_3</topicName>
+      <jointName>ctr_3</jointName>
+    </plugin>
+    <plugin name='torque_sensor_fti_3' filename='libgazebo_ros_ft_sensor.so'>
+      <updateRate>50.0</updateRate>
+      <topicName>torque_fti_3</topicName>
+      <jointName>fti_3</jointName>
+    </plugin>
+    <plugin name='torque_sensor_tc_4' filename='libgazebo_ros_ft_sensor.so'>
+      <updateRate>50.0</updateRate>
+      <topicName>torque_tc_4</topicName>
+      <jointName>tc_4</jointName>
+    </plugin>
+    <plugin name='torque_sensor_ctr_4' filename='libgazebo_ros_ft_sensor.so'>
+      <updateRate>50.0</updateRate>
+      <topicName>torque_ctr_4</topicName>
+      <jointName>ctr_4</jointName>
+    </plugin>
+    <plugin name='torque_sensor_fti_4' filename='libgazebo_ros_ft_sensor.so'>
+      <updateRate>50.0</updateRate>
+      <topicName>torque_fti_4</topicName>
+      <jointName>fti_4</jointName>
+    </plugin>
+    <plugin name='torque_sensor_tc_5' filename='libgazebo_ros_ft_sensor.so'>
+      <updateRate>50.0</updateRate>
+      <topicName>torque_tc_5</topicName>
+      <jointName>tc_5</jointName>
+    </plugin>
+    <plugin name='torque_sensor_ctr_5' filename='libgazebo_ros_ft_sensor.so'>
+      <updateRate>50.0</updateRate>
+      <topicName>torque_ctr_5</topicName>
+      <jointName>ctr_5</jointName>
+    </plugin>
+    <plugin name='torque_sensor_fti_5' filename='libgazebo_ros_ft_sensor.so'>
+      <updateRate>50.0</updateRate>
+      <topicName>torque_fti_5</topicName>
+      <jointName>fti_5</jointName>
+    </plugin>
+    <plugin name='torque_sensor_tc_6' filename='libgazebo_ros_ft_sensor.so'>
+      <updateRate>50.0</updateRate>
+      <topicName>torque_tc_6</topicName>
+      <jointName>tc_6</jointName>
+    </plugin>
+    <plugin name='torque_sensor_ctr_6' filename='libgazebo_ros_ft_sensor.so'>
+      <updateRate>50.0</updateRate>
+      <topicName>torque_ctr_6</topicName>
+      <jointName>ctr_6</jointName>
+    </plugin>
+    <static>0</static>
+    <plugin name='torque_sensor_fti_6' filename='libgazebo_ros_ft_sensor.so'>
+      <updateRate>50.0</updateRate>
+      <topicName>torque_fti_6</topicName>
+      <jointName>fti_6</jointName>
+    </plugin>
+  </model>
+</sdf>
