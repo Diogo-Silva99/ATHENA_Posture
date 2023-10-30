@@ -1,0 +1,48 @@
+hexapod:
+  # Publish all joint states
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 100
+
+  # controllers
+  joint_trajectory_controller:
+    type: effort_controllers/JointTrajectoryController
+    joints:
+      - tc_1
+      - tc_2
+      - tc_3
+      - tc_4
+      - tc_5
+      - tc_6
+      - ctr_1
+      - ctr_2
+      - ctr_3
+      - ctr_4
+      - ctr_5
+      - ctr_6
+      - fti_1
+      - fti_2
+      - fti_3
+      - fti_4
+      - fti_5
+      - fti_6
+
+    gains:
+      tc_1: {p: 220, d: 0.001, i: 40.0, i_clamp: 100}
+      tc_2: {p: 220, d: 0.001, i: 40.0, i_clamp: 100}
+      tc_3: {p: 220, d: 0.001, i: 40.0, i_clamp: 100}
+      tc_4: {p: 220, d: 0.001, i: 40.0, i_clamp: 100}
+      tc_5: {p: 220, d: 0.001, i: 40.0, i_clamp: 100}
+      tc_6: {p: 220, d: 0.001, i: 40.0, i_clamp: 100}
+      ctr_1: {p: 220, d: 0.001, i: 40.0, i_clamp: 100}
+      ctr_2: {p: 220, d: 0.001, i: 40.0, i_clamp: 100}
+      ctr_3: {p: 220, d: 0.001, i: 40.0, i_clamp: 100}
+      ctr_4: {p: 220, d: 0.001, i: 40.0, i_clamp: 100}
+      ctr_5: {p: 220, d: 0.001, i: 40.0, i_clamp: 100}
+      ctr_6: {p: 220, d: 0.001, i: 40.0, i_clamp: 100}
+      fti_1: {p: 220, d: 0.001, i: 40.0, i_clamp: 100}
+      fti_2: {p: 220, d: 0.001, i: 40.0, i_clamp: 100}
+      fti_3: {p: 220, d: 0.001, i: 40.0, i_clamp: 100}
+      fti_4: {p: 220, d: 0.001, i: 40.0, i_clamp: 100}
+      fti_5: {p: 220, d: 0.001, i: 40.0, i_clamp: 100}
+      fti_6: {p: 220, d: 0.001, i: 40.0, i_clamp: 100}

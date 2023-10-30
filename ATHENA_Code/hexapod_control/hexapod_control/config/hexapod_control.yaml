@@ -1,0 +1,100 @@
+hexapod:
+  # Publish all joint states
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    rate: 50
+
+  # Position controllers
+
+  # Thorax-Coxa
+  tc_1_controller:
+    type: effort_controllers/JointPositionController
+    joint: tc_1
+    pid: {p: 15, d: 0.15, i: 540, i_clamp: 0.0} # {p: 15.0, i: 1.0, d: 0.15, i_clamp: 0.0}  # {p: 15, d: 0.15.002, i: 540.05, i_clamp: 1} # 600 # {p: 15, d: 0.15.001, i: 540.05, i_clamp: 1} # 700 # {p: 15, d: 0.15.001, i: 540.1, i_clamp: 1} # {p: 15, d: 0.15.1, i: 30, i_clamp: 15}
+
+  tc_2_controller:
+    type: effort_controllers/JointPositionController
+    joint: tc_2
+    pid: {p: 15, d: 0.15, i: 540, i_clamp: 0.0} # {p: 15.0, i: 1.0, d: 0.15, i_clamp: 0.0}  # {p: 15, d: 0.15.002, i: 540.05, i_clamp: 1} # 600 # {p: 15, d: 0.15.001, i: 540.05, i_clamp: 1} # 700 # {p: 15, d: 0.15.001, i: 540.1, i_clamp: 1} # {p: 15, d: 0.15.1, i: 30, i_clamp: 15}
+
+  tc_3_controller:
+    type: effort_controllers/JointPositionController
+    joint: tc_3
+    pid: {p: 15, d: 0.15, i: 540, i_clamp: 0.0} # {p: 15.0, i: 1.0, d: 0.15, i_clamp: 0.0}  # {p: 15, d: 0.15.002, i: 540.05, i_clamp: 1} # 600 # {p: 15, d: 0.15.001, i: 540.05, i_clamp: 1} # 700 # {p: 15, d: 0.15.001, i: 540.1, i_clamp: 1} # {p: 15, d: 0.15.1, i: 30, i_clamp: 15}
+
+  tc_4_controller:
+    type: effort_controllers/JointPositionController
+    joint: tc_4
+    pid: {p: 15, d: 0.15, i: 540, i_clamp: 0.0} # {p: 15.0, i: 1.0, d: 0.15, i_clamp: 0.0}  # {p: 15, d: 0.15.002, i: 540.05, i_clamp: 1} # 600 # {p: 15, d: 0.15.001, i: 540.05, i_clamp: 1} # 700 # {p: 15, d: 0.15.001, i: 540.1, i_clamp: 1} # {p: 15, d: 0.15.1, i: 30, i_clamp: 15}
+
+  tc_5_controller:
+    type: effort_controllers/JointPositionController
+    joint: tc_5
+    pid: {p: 15, d: 0.15, i: 540, i_clamp: 0.0} # {p: 15.0, i: 1.0, d: 0.15, i_clamp: 0.0}  # {p: 15, d: 0.15.002, i: 540.05, i_clamp: 1} # 600 # {p: 15, d: 0.15.001, i: 540.05, i_clamp: 1} # 700 # {p: 15, d: 0.15.001, i: 540.1, i_clamp: 1} # {p: 15, d: 0.15.1, i: 30, i_clamp: 15}
+
+  tc_6_controller:
+    type: effort_controllers/JointPositionController
+    joint: tc_6
+    pid: {p: 15, d: 0.15, i: 540, i_clamp: 0.0} # {p: 15.0, i: 1.0, d: 0.15, i_clamp: 0.0}  # {p: 15, d: 0.15.002, i: 540.05, i_clamp: 1} # 600 # {p: 15, d: 0.15.001, i: 540.05, i_clamp: 1} # 700 # {p: 15, d: 0.15.001, i: 540.1, i_clamp: 1} # {p: 15, d: 0.15.1, i: 30, i_clamp: 15}
+
+  # Coxa-Throcanterofemur
+  ctr_1_controller:
+    type: effort_controllers/JointPositionController
+    joint: ctr_1
+    pid: {p: 15, d: 0.15, i: 540, i_clamp: 0.0} # {p: 15.0, i: 1.0, d: 0.15, i_clamp: 0.0}  # {p: 15, d: 0.15.002, i: 540.05, i_clamp: 1} # 600 # {p: 15, d: 0.15.001, i: 540.05, i_clamp: 1} # 700 # {p: 15, d: 0.15.001, i: 540.1, i_clamp: 1} # {p: 15, d: 0.15.1, i: 30, i_clamp: 15}
+
+  ctr_2_controller:
+    type: effort_controllers/JointPositionController
+    joint: ctr_2
+    pid: {p: 15, d: 0.15, i: 540, i_clamp: 0.0} # {p: 15.0, i: 1.0, d: 0.15, i_clamp: 0.0}  # {p: 15, d: 0.15.002, i: 540.05, i_clamp: 1} # 600 # {p: 15, d: 0.15.001, i: 540.05, i_clamp: 1} # 700 # {p: 15, d: 0.15.001, i: 540.1, i_clamp: 1} # {p: 15, d: 0.15.1, i: 30, i_clamp: 15}
+
+  ctr_3_controller:
+    type: effort_controllers/JointPositionController
+    joint: ctr_3
+    pid: {p: 15, d: 0.15, i: 540, i_clamp: 0.0} # {p: 15.0, i: 1.0, d: 0.15, i_clamp: 0.0}  # {p: 15, d: 0.15.002, i: 540.05, i_clamp: 1} # 600 # {p: 15, d: 0.15.001, i: 540.05, i_clamp: 1} # 700 # {p: 15, d: 0.15.001, i: 540.1, i_clamp: 1} # {p: 15, d: 0.15.1, i: 30, i_clamp: 15}
+
+  ctr_4_controller:
+    type: effort_controllers/JointPositionController
+    joint: ctr_4
+    pid: {p: 15, d: 0.15, i: 540, i_clamp: 0.0} # {p: 15.0, i: 1.0, d: 0.15, i_clamp: 0.0}  # {p: 15, d: 0.15.002, i: 540.05, i_clamp: 1} # 600 # {p: 15, d: 0.15.001, i: 540.05, i_clamp: 1} # 700 # {p: 15, d: 0.15.001, i: 540.1, i_clamp: 1} # {p: 15, d: 0.15.1, i: 30, i_clamp: 15}
+
+  ctr_5_controller:
+    type: effort_controllers/JointPositionController
+    joint: ctr_5
+    pid: {p: 15, d: 0.15, i: 540, i_clamp: 0.0} # {p: 15.0, i: 1.0, d: 0.15, i_clamp: 0.0}  # {p: 15, d: 0.15.002, i: 540.05, i_clamp: 1} # 600 # {p: 15, d: 0.15.001, i: 540.05, i_clamp: 1} # 700 # {p: 15, d: 0.15.001, i: 540.1, i_clamp: 1} # {p: 15, d: 0.15.1, i: 30, i_clamp: 15}
+
+  ctr_6_controller:
+    type: effort_controllers/JointPositionController
+    joint: ctr_6
+    pid: {p: 15, d: 0.15, i: 540, i_clamp: 0.0} # {p: 15.0, i: 1.0, d: 0.15, i_clamp: 0.0}  # {p: 15, d: 0.15.002, i: 540.05, i_clamp: 1} # 600 # {p: 15, d: 0.15.001, i: 540.05, i_clamp: 1} # 700 # {p: 15, d: 0.15.001, i: 540.1, i_clamp: 1} # {p: 15, d: 0.15.1, i: 30, i_clamp: 15}
+
+  # Femur-Tibia
+  fti_1_controller:
+    type: effort_controllers/JointPositionController
+    joint: fti_1
+    pid: {p: 15, d: 0.15, i: 540, i_clamp: 0.0} # {p: 15.0, i: 1.0, d: 0.15, i_clamp: 0.0}  # {p: 15, d: 0.15.002, i: 540.05, i_clamp: 1} # 600 # {p: 15, d: 0.15.001, i: 540.05, i_clamp: 1} # 700 # {p: 15, d: 0.15.001, i: 540.1, i_clamp: 1} # {p: 15, d: 0.15.1, i: 30, i_clamp: 15}
+
+  fti_2_controller:
+    type: effort_controllers/JointPositionController
+    joint: fti_2
+    pid: {p: 15, d: 0.15, i: 540, i_clamp: 0.0} # {p: 15.0, i: 1.0, d: 0.15, i_clamp: 0.0}  # {p: 15, d: 0.15.002, i: 540.05, i_clamp: 1} # 600 # {p: 15, d: 0.15.001, i: 540.05, i_clamp: 1} # 700 # {p: 15, d: 0.15.001, i: 540.1, i_clamp: 1} # {p: 15, d: 0.15.1, i: 30, i_clamp: 15}
+
+  fti_3_controller:
+    type: effort_controllers/JointPositionController
+    joint: fti_3
+    pid: {p: 15, d: 0.15, i: 540, i_clamp: 0.0} # {p: 15.0, i: 1.0, d: 0.15, i_clamp: 0.0}  # {p: 15, d: 0.15.002, i: 540.05, i_clamp: 1} # 600 # {p: 15, d: 0.15.001, i: 540.05, i_clamp: 1} # 700 # {p: 15, d: 0.15.001, i: 540.1, i_clamp: 1} # {p: 15, d: 0.15.1, i: 30, i_clamp: 15}
+
+  fti_4_controller:
+    type: effort_controllers/JointPositionController
+    joint: fti_4
+    pid: {p: 15, d: 0.15, i: 540, i_clamp: 0.0} # {p: 15.0, i: 1.0, d: 0.15, i_clamp: 0.0}  # {p: 15, d: 0.15.002, i: 540.05, i_clamp: 1} # 600 # {p: 15, d: 0.15.001, i: 540.05, i_clamp: 1} # 700 # {p: 15, d: 0.15.001, i: 540.1, i_clamp: 1} # {p: 15, d: 0.15.1, i: 30, i_clamp: 15}
+
+  fti_5_controller:
+    type: effort_controllers/JointPositionController
+    joint: fti_5
+    pid: {p: 15, d: 0.15, i: 540, i_clamp: 0.0} # {p: 15.0, i: 1.0, d: 0.15, i_clamp: 0.0}  # {p: 15, d: 0.15.002, i: 540.05, i_clamp: 1} # 600 # {p: 15, d: 0.15.001, i: 540.05, i_clamp: 1} # 700 # {p: 15, d: 0.15.001, i: 540.1, i_clamp: 1} # {p: 15, d: 0.15.1, i: 30, i_clamp: 15}
+
+  fti_6_controller:
+    type: effort_controllers/JointPositionController
+    joint: fti_6
+    pid: {p: 15, d: 0.15, i: 540, i_clamp: 0.0} # {p: 15.0, i: 1.0, d: 0.15, i_clamp: 0.0}  # {p: 15, d: 0.15.002, i: 540.05, i_clamp: 1} # 600 # {p: 15, d: 0.15.001, i: 540.05, i_clamp: 1} # 700 # {p: 15, d: 0.15.001, i: 540.1, i_clamp: 1} # {p: 15, d: 0.15.1, i: 30, i_clamp: 15}

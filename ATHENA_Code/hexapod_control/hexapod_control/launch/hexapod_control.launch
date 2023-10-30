@@ -1,0 +1,12 @@
+<launch>
+  <rosparam command="load" file="$(find hexapod_control)/config/hexapod_control.yaml"/>
+
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/hexapod" args="tc_1_controller tc_2_controller tc_3_controller tc_4_controller tc_5_controller tc_6_controller ctr_1_controller ctr_2_controller ctr_3_controller ctr_4_controller ctr_5_controller ctr_6_controller fti_1_controller fti_2_controller fti_3_controller fti_4_controller fti_5_controller fti_6_controller"/>
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+  	respawn="false" output="screen">
+      <remap from="/joint_states" to="/hexapod/joint_states" />
+  </node>
+</launch>
